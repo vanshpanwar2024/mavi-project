@@ -39,7 +39,7 @@ export default function Events() {
       {/* Global Fixed Watermark */}
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
         <h1 className="font-display text-[15vw] text-white opacity-10 tracking-widest whitespace-nowrap select-none">
-          VISTAAR
+          MAVI
         </h1>
       </div>
 

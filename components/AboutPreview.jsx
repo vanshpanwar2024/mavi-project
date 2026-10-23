@@ -43,7 +43,7 @@ export default function AboutPreview() {
           </h2>
 
           <p className="text-off-white-dim font-body text-sm md:text-base tracking-[1px] leading-relaxed mb-10 max-w-md">
-            At Vistaar Studios, we blur the lines between high fashion and raw talent. We are a premier production house dedicated to orchestrating elite runway shows, competitive dance forums, and portfolio-defining shoots that catapult emerging artists onto the national stage.
+            At Mavi Entertainment Production House, we blur the lines between high fashion and raw talent. We are a premier production house dedicated to orchestrating elite runway shows, competitive dance forums, and portfolio-defining shoots that catapult emerging artists onto the national stage.
           </p>
 
           <a href="/about" className="group relative inline-flex items-center space-x-4 w-max pointer-events-auto">
@@ -90,7 +90,7 @@ export default function AboutPreview() {
               >
                 <Image 
                   src={card.src}
-                  alt={`Vistaar Card ${card.id}`}
+                  alt={`Mavi Card ${card.id}`}
                   fill
                   className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 />
@@ -115,7 +115,7 @@ export default function AboutPreview() {
           >
             <Image 
               src="/gallery-2.png" // Using the second image as the representative one
-              alt="Vistaar About"
+              alt="Mavi About"
               fill
               className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
             />

@@ -37,29 +37,19 @@ export default function LoadingScreen() {
         >
           {/* Logo Animation */}
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
+            initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="mb-8 relative w-[180px] h-[180px] md:w-[240px] md:h-[240px]"
+            className="mb-10 relative w-[220px] h-[220px] md:w-[300px] md:h-[300px] mix-blend-screen"
           >
              <Image 
                src="/logo.png" 
-               alt="Vistaar Studios" 
+               alt="Logo" 
                fill
                className="object-contain"
                priority
              />
           </motion.div>
-
-          {/* Text (Optional/Alternative to Image) */}
-          <motion.h1
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="font-display text-3xl md:text-5xl text-off-white tracking-widest mb-8"
-          >
-            VISTAAR <span className="text-gold italic font-[300]">STUDIOS</span>
-          </motion.h1>
 
           {/* Stylized Loading Line */}
           <div className="w-[200px] h-[1px] bg-[rgba(255,255,255,0.1)] overflow-hidden relative">

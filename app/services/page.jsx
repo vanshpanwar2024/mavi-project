@@ -10,7 +10,7 @@ export default function Services() {
       {/* Global Fixed Watermark */}
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
         <h1 className="font-display text-[15vw] text-white opacity-10 tracking-widest whitespace-nowrap select-none">
-          VISTAAR
+          MAVI
         </h1>
       </div>
 
@@ -57,7 +57,7 @@ export default function Services() {
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
                 className="font-body text-[12px] text-off-white-dim leading-loose max-w-[600px] mx-auto mt-6"
               >
-                From elite competitions to portfolio shoots, workshops to casting auditions — everything a performer, studio, or brand needs to grow with Vistaar Studios.
+                From elite competitions to portfolio shoots, workshops to casting auditions — everything a performer, studio, or brand needs to grow with Mavi Entertainment Production House.
               </motion.p>
             </div>
           </div>
@@ -117,14 +117,14 @@ export default function Services() {
                <div className="h-[1px] w-[48px] bg-gold my-[24px]" />
                
                <p className="font-body text-[12px] text-[rgba(255,255,255,0.7)] leading-[2.2] mb-10">
-                 Your portfolio is your first impression — and in the world of fashion and performance, first impressions determine everything. Through the Vistaar Studios marketplace, book verified professional photographers and videographers who specialise in talent, fashion, and performance photography. Every shoot is tailored to showcase your unique presence and build your professional profile.
+                 Your portfolio is your first impression — and in the world of fashion and performance, first impressions determine everything. Through the Mavi Entertainment Production House marketplace, book verified professional photographers and videographers who specialise in talent, fashion, and performance photography. Every shoot is tailored to showcase your unique presence and build your professional profile.
                </p>
 
                <div className="space-y-[20px] mb-12">
                  {[
-                   { title: "Verified Professionals", text: "Every photographer on our platform is verified, reviewed, and rated by the Vistaar community." },
+                   { title: "Verified Professionals", text: "Every photographer on our platform is verified, reviewed, and rated by the Mavi community." },
                    { title: "Tailored to You", text: "Model portfolios, dance reels, fashion editorials, or performance videos — we have the right creative for every need." },
-                   { title: "Special Rates for Participants", text: "Registered Vistaar participants get exclusive discounted rates on all marketplace bookings." }
+                   { title: "Special Rates for Participants", text: "Registered Mavi participants get exclusive discounted rates on all marketplace bookings." }
                  ].map((feature, i) => (
                    <motion.div 
                      key={i}
@@ -201,7 +201,7 @@ export default function Services() {
                  {[
                    { title: "Industry Professionals", text: "Every workshop is conducted by verified coaches and working industry professionals with real experience." },
                    { title: "One-Time and Recurring", text: "Choose from intensive one-day masterclasses or recurring weekly sessions built around your schedule." },
-                   { title: "Finale Preparation", text: "Selected finalists get access to exclusive pre-finale preparation workshops designed specifically for Vistaar events." }
+                   { title: "Finale Preparation", text: "Selected finalists get access to exclusive pre-finale preparation workshops designed specifically for Mavi events." }
                  ].map((feature, i) => (
                    <motion.div 
                      key={i}
@@ -304,7 +304,7 @@ export default function Services() {
                <div className="h-[1px] w-[48px] bg-gold my-[24px]" />
                
                <p className="font-body text-[12px] text-[rgba(255,255,255,0.7)] leading-[2.2] mb-8">
-                 Getting discovered is no longer about who you know. Through the Vistaar Studios casting board, brands, directors, and agencies post active casting calls directly to our platform — and our registered talent can apply in minutes. Whether you are looking for brand ambassador opportunities, commercial shoots, music video appearances, or fashion campaign features — our casting board connects you with real paid opportunities from verified clients.
+                 Getting discovered is no longer about who you know. Through the Mavi Entertainment Production House casting board, brands, directors, and agencies post active casting calls directly to our platform — and our registered talent can apply in minutes. Whether you are looking for brand ambassador opportunities, commercial shoots, music video appearances, or fashion campaign features — our casting board connects you with real paid opportunities from verified clients.
                </p>
 
                <div className="grid grid-cols-2 gap-[16px] mb-[24px]">
@@ -333,8 +333,8 @@ export default function Services() {
                <div className="space-y-[20px] mb-12">
                  {[
                    { title: "Real Paid Opportunities", text: "Every casting on our board is a genuine paid or credited opportunity — no unpaid exposure-only listings ever." },
-                   { title: "Verified Brand Clients", text: "All brands and agencies are verified by the Vistaar Studios team before any listing goes live on the platform." },
-                   { title: "Apply in Minutes", text: "Your Vistaar talent profile works as your instant application. One click sends your portfolio to the casting client." }
+                   { title: "Verified Brand Clients", text: "All brands and agencies are verified by the Mavi Entertainment Production House team before any listing goes live on the platform." },
+                   { title: "Apply in Minutes", text: "Your Mavi talent profile works as your instant application. One click sends your portfolio to the casting client." }
                  ].map((feature, i) => (
                    <motion.div 
                      key={i}

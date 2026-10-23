@@ -57,14 +57,14 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
           
           {/* Logo */}
-          <Link href="/" className="flex flex-col items-center group mix-blend-screen hover:scale-[1.02] transition-transform duration-500 -ml-2 md:-ml-6 mt-1 md:mt-2">
-            <div className="relative w-48 h-20 md:w-60 md:h-24">
+          <Link href="/" className="flex items-center group mix-blend-screen hover:scale-[1.02] transition-transform duration-300">
+            <div className="relative w-36 h-14 md:w-48 md:h-16">
               <Image 
                 src="/logo.png" 
-                alt="Vistaar Studios"
+                alt="Logo"
                 fill
                 priority
-                className="object-contain scale-[1.25] md:scale-[1.4]"
+                className="object-contain"
               />
             </div>
           </Link>

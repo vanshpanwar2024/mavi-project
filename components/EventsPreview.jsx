@@ -76,7 +76,7 @@ export default function EventsPreview() {
              viewport={{ once: true }}
           >
              <p className="text-off-white-dim font-body text-[13px] tracking-[0.05em] leading-[1.8]">
-              At Vistaar Studios, every event is a carefully produced experience where emerging talent steps into the spotlight. From preliminary rounds to grand finales, we build stages designed to honour the art.
+              At Mavi Entertainment Production House, every event is a carefully produced experience where emerging talent steps into the spotlight. From preliminary rounds to grand finales, we build stages designed to honour the art.
             </p>
           </motion.div>
 

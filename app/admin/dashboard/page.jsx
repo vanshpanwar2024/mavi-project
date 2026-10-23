@@ -173,8 +173,13 @@ export default function AdminDashboard() {
     <main className="w-full min-h-screen bg-[#050505] pb-[100px]">
       {/* Top Navbar */}
       <nav className="w-full bg-[#0e0e0e] border-b border-[rgba(201,168,76,0.15)] p-[20px_40px] flex items-center justify-between z-50 fixed top-0">
-        <div className="flex flex-col">
-          <span className="font-display text-[18px] text-off-white tracking-wider leading-none">VISTAAR</span>
+        <div className="relative w-28 h-10 mix-blend-screen">
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            fill
+            className="object-contain"
+          />
         </div>
         <div className="font-body text-[10px] text-gold tracking-[3px] uppercase">Admin Dashboard</div>
         <button 

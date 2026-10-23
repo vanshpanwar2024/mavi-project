@@ -14,21 +14,20 @@ export default function Footer() {
     >
       {/* FOOTER UPPER SECTION */}
       <section className="w-full bg-[#080808] border-t border-[rgba(201,168,76,0.12)] py-[80px] px-[24px] md:px-[60px]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-[40px] md:gap-0 text-center md:text-left">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-center gap-[40px] md:gap-0 text-center md:text-left">
           
           {/* Left Column — Brand */}
           <div className="flex flex-col items-center md:items-start flex-1">
-            <Link href="/" className="flex flex-col items-center md:items-start group mix-blend-screen hover:scale-[1.02] transition-transform duration-500">
-              <div className="relative w-48 h-20 md:w-56 md:h-20 -ml-4 md:-ml-8 -mt-4">
+            <Link href="/" className="flex flex-col items-center md:items-start group mix-blend-screen hover:scale-[1.02] transition-transform duration-300">
+              <div className="relative w-48 h-24 md:w-60 md:h-32">
                 <Image 
                   src="/logo.png" 
-                  alt="Vistaar Studios"
+                  alt="Logo"
                   fill
-                  className="object-contain scale-[1.25] md:scale-[1.4]"
+                  className="object-contain"
                 />
               </div>
             </Link>
-            
           </div>
 
           {/* Center Column — Navigation */}
@@ -117,7 +116,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-[40px] md:gap-0">
           
           <div className="font-body text-[8px] text-off-white-dim tracking-[1px] order-3 md:order-1 text-center md:text-left">
-            &copy; 2026 Vistaar Studios. All Rights Reserved.
+            &copy; 2026 Mavi Entertainment Production House. All Rights Reserved.
           </div>
 
           <div className="text-gold opacity-40 text-[12px] order-1 md:order-2">

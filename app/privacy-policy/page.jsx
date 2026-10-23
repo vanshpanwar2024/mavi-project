@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "Privacy Policy | Vistaar Studios",
-  description: "Privacy Policy for Vistaar Studios - Information on how we collect, use, and protect your data.",
+  title: "Privacy Policy | Mavi Entertainment Production House",
+  description: "Privacy Policy for Mavi Entertainment Production House - Information on how we collect, use, and protect your data.",
 };
 
 export default function PrivacyPolicy() {
@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
       <div className="max-w-4xl mx-auto">
         <h1 className="font-display text-4xl md:text-5xl text-gold mb-4">Privacy Policy</h1>
         <p className="font-body text-off-white-dim mb-12">
-          <strong>Vistaar Studios</strong><br />
+          <strong>Mavi Entertainment Production House</strong><br />
           
         </p>
 
@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="font-display text-2xl md:text-3xl text-gold-light mb-4">1. Introduction</h2>
             <p className="mb-4">
-              Vistaar Studios operates as a premium fashion and talent events company based in Delhi NCR, India. We are committed to protecting your personal information and your right to privacy.
+              Mavi Entertainment Production House operates as a premium fashion and talent events company based in Delhi NCR, India. We are committed to protecting your personal information and your right to privacy.
             </p>
             <p>
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, register for events, or interact with our services.
@@ -206,7 +206,7 @@ export default function PrivacyPolicy() {
             </p>
             
             <div className="space-y-3">
-              <p className="font-display text-xl">Vistaar Studios</p>
+              <p className="font-display text-xl">Mavi Entertainment Production House</p>
               <div className="flex items-center gap-3 text-off-white/80">
                 <span className="text-xl">📩</span>
                 <a href="mailto:hello@vistaarstudios.in" className="hover:text-gold transition-colors">hello@vistaarstudios.in</a>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 
 export default function AdminLogin() {
@@ -43,16 +44,21 @@ export default function AdminLogin() {
         <div className="absolute bottom-0 right-0 w-[15px] h-[15px] border-b border-r border-gold m-[10px]" />
 
         {/* Logo */}
-        <div className="flex flex-col items-center">
-          <span className="font-display text-[24px] text-off-white tracking-wider leading-none">VISTAAR</span>
-          <span className="font-body text-[8px] text-gold tracking-[4px] leading-none mt-1">STUDIOS</span>
+        <div className="relative w-44 h-20 mix-blend-screen">
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            fill
+            className="object-contain"
+            priority
+          />
         </div>
 
         {/* Separator */}
         <div className="w-[6px] h-[6px] rotate-45 bg-gold my-6 opacity-80" />
 
         <h1 className="font-display text-[28px] text-off-white mb-2 text-center">Admin Access</h1>
-        <p className="font-body text-[10px] text-off-white-dim text-center mb-6">Vistaar Studios internal dashboard</p>
+        <p className="font-body text-[10px] text-off-white-dim text-center mb-6">Mavi Entertainment Production House internal dashboard</p>
 
         <div className="w-full h-[1px] bg-gold opacity-30 mb-[24px]" />
 

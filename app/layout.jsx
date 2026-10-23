@@ -18,7 +18,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Vistaar Studios",
+  title: "Mavi Entertainment Production House",
   description: "Delhi NCR's premier fashion and talent events platform",
 };
 

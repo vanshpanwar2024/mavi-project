@@ -52,7 +52,7 @@ export default function About() {
       {/* Global Fixed Watermark */}
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
         <h1 className="font-display text-[15vw] text-white opacity-10 tracking-widest whitespace-nowrap select-none">
-          VISTAAR
+          MAVI
         </h1>
       </div>
 
@@ -67,7 +67,7 @@ export default function About() {
           <motion.div variants={itemVariants} className="flex items-center space-x-4 mb-8">
             <div className="w-12 h-[1px] bg-gold opacity-50" />
             <span className="text-[10px] text-gold font-body uppercase tracking-[0.4em]">
-              The Vistaar Story
+              The Mavi Story
             </span>
             <div className="w-12 h-[1px] bg-gold opacity-50" />
           </motion.div>
@@ -80,7 +80,7 @@ export default function About() {
           </motion.h2>
 
           <motion.p variants={itemVariants} className="font-body text-[13px] text-off-white-dim leading-[2.2] max-w-[700px]">
-            Every great performer remembers the moment they first stepped onto a real stage. The lights. The silence before the music. The feeling that everything they had worked for had led to exactly this moment. At Vistaar Studios, we exist to create that moment — for every dancer, every model, every performer who dares to dream bigger than their classroom.
+            Every great performer remembers the moment they first stepped onto a real stage. The lights. The silence before the music. The feeling that everything they had worked for had led to exactly this moment. At Mavi Entertainment Production House, we exist to create that moment — for every dancer, every model, every performer who dares to dream bigger than their classroom.
           </motion.p>
         </motion.div>
 
@@ -120,7 +120,7 @@ export default function About() {
             </h2>
             <p className="font-body text-[12px] text-off-white-dim leading-[2.2] relative z-10">
               Delhi NCR is home to thousands of dance academies, fashion studios, and talent coaches quietly producing some of the most gifted young performers in the country. We saw them every day — in YouTube videos filmed on phone cameras, in local competitions with no real production value, in studios full of students who had the talent of national champions but no platform worthy of showcasing it. <br/><br/>
-              That gap — between raw extraordinary talent and a stage that truly honours it — is exactly why Vistaar Studios was born. We started with a simple but powerful belief: talent in India is not scarce. Opportunity is.
+              That gap — between raw extraordinary talent and a stage that truly honours it — is exactly why Mavi Entertainment Production House was born. We started with a simple but powerful belief: talent in India is not scarce. Opportunity is.
             </p>
           </motion.div>
 
@@ -137,7 +137,7 @@ export default function About() {
         </motion.div>
       </section>
 
-      {/* SECTION 3 - WHAT VISTAAR MEANS */}
+      {/* SECTION 3 - WHAT MAVI MEANS */}
       <section className="relative w-full bg-transparent py-[100px] md:py-[140px] px-[24px] md:px-[60px] z-10">
         <motion.div 
           className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24 items-center"
@@ -151,7 +151,7 @@ export default function About() {
              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-gold translate-x-[1px] translate-y-[1px] z-20" />
              <Image 
                src="/about-2.jpg" 
-               alt="What Vistaar Means" 
+               alt="What Mavi Means" 
                fill
                className="object-cover opacity-80" 
              />
@@ -162,14 +162,14 @@ export default function About() {
               02
             </span>
             <span className="text-[10px] text-gold font-body uppercase tracking-[0.3em] mb-6 relative z-10">
-              What Vistaar Means
+              What Mavi Means
             </span>
             <h2 className="font-display font-[300] text-4xl md:text-[48px] text-off-white leading-[1.1] mb-8 relative z-10">
               Expansion. For Everyone.
             </h2>
             <p className="font-body text-[12px] text-off-white-dim leading-[2.2] relative z-10">
-              Vistaar is a Sanskrit word meaning expansion. Growth. The act of spreading beyond your current boundaries into something far greater. It is not just our name. It is our promise.<br/><br/>
-              To every participant — we promise to expand your world. To every studio partner — we promise to expand your reach. To every sponsor — we promise to expand your brand&apos;s connection with India&apos;s most passionate young audience. Vistaar is expansion. For everyone.
+              Mavi represents expansion, growth, and the act of spreading beyond your current boundaries into something far greater. It is not just our name. It is our promise.<br/><br/>
+              To every participant — we promise to expand your world. To every studio partner — we promise to expand your reach. To every sponsor — we promise to expand your brand&apos;s connection with India&apos;s most passionate young audience. Mavi is expansion. For everyone.
             </p>
           </motion.div>
         </motion.div>
@@ -238,8 +238,8 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             {[
               { num: "I", title: "Every Participant Deserves Dignity.", text: "Regardless of whether you make it to the finale or not, your participation with us is honoured. You receive professional evaluation, an official certificate, and the knowledge that you competed on a platform that took your talent seriously." },
-              { num: "II", title: "Every Stage Deserves Production.", text: "We do not do school auditorium setups with a laptop speaker and a bedsheet backdrop. Every Vistaar event has professional lighting, sound, a real stage, a credible judging panel, and production value that makes participants feel like they have truly arrived." },
-              { num: "III", title: "Every Winner Deserves a Launchpad.", text: "Winning a Vistaar title is not just about a trophy. It is about the doors that open afterward — the portfolio shoot, the sponsor visibility, the industry connections, and the credibility that comes with performing on a platform the industry respects." }
+              { num: "II", title: "Every Stage Deserves Production.", text: "We do not do school auditorium setups with a laptop speaker and a bedsheet backdrop. Every Mavi event has professional lighting, sound, a real stage, a credible judging panel, and production value that makes participants feel like they have truly arrived." },
+              { num: "III", title: "Every Winner Deserves a Launchpad.", text: "Winning a Mavi title is not just about a trophy. It is about the doors that open afterward — the portfolio shoot, the sponsor visibility, the industry connections, and the credibility that comes with performing on a platform the industry respects." }
             ].map((card, idx) => (
               <motion.div 
                 key={idx}
@@ -310,8 +310,8 @@ export default function About() {
               Delhi NCR Is Our Beginning.<br className="hidden md:block"/> Not Our Limit.
             </h2>
             <p className="font-body text-[12px] text-off-white-dim leading-[2.2] relative z-10">
-              Within the next three years Vistaar Studios will expand its events to Mumbai, Bangalore, Hyderabad, Pune, and Chandigarh. Our marketplace will become the go-to platform for talent discovery across India. <br/><br/>
-              We are building toward a national grand finale — one event per year that brings the best talent from every city onto a single spectacular stage. India&apos;s answer to a world class talent championship. Produced by Vistaar Studios.
+              Within the next three years Mavi Entertainment Production House will expand its events to Mumbai, Bangalore, Hyderabad, Pune, and Chandigarh. Our marketplace will become the go-to platform for talent discovery across India. <br/><br/>
+              We are building toward a national grand finale — one event per year that brings the best talent from every city onto a single spectacular stage. India&apos;s answer to a world class talent championship. Produced by Mavi Entertainment Production House.
             </p>
           </motion.div>
 
@@ -348,84 +348,96 @@ export default function About() {
           <motion.div variants={itemVariants} className="flex flex-col items-center mb-16 text-center">
             <div className="flex items-center space-x-4 mb-6">
               <div className="w-12 h-[1px] bg-gold opacity-50" />
-              <span className="text-[10px] text-gold font-body uppercase tracking-[0.3em]">The Founders</span>
+              <span className="text-[10px] text-gold font-body uppercase tracking-[0.3em]">The Founder</span>
               <div className="w-12 h-[1px] bg-gold opacity-50" />
             </div>
             <h2 className="font-display font-[300] text-4xl md:text-[56px] text-off-white mb-4">
-              The Minds Behind Vistaar
+              The Visionary Behind Mavi
             </h2>
             <p className="font-body text-[12px] text-off-white-dim">
               Built from passion. Driven by purpose. Committed to Indian talent.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full mb-16">
+          {/* Vivek Panwar Feature Card */}
+          <motion.div 
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } }
+            }}
+            className="w-full max-w-4xl bg-gradient-to-b from-[#121212] to-[#0a0a0a] border border-[rgba(201,168,76,0.2)] p-8 md:p-12 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+          >
+            {/* Ambient Background Glow */}
+            <div className="absolute -top-24 -right-24 w-72 h-72 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
             
-            {/* Ginni */}
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, x: -30 },
-                visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
-              }}
-              className="bg-[#111] border border-[rgba(201,168,76,0.1)] p-10 md:p-12 flex flex-col"
-            >
-              <div className="w-[140px] h-[140px] rounded-full border border-gold mx-auto bg-[#1a1a1a] flex items-center justify-center mb-6">
-                <span className="font-display text-[32px] text-gold">GP</span>
-              </div>
-              <h3 className="font-display font-[300] text-[36px] text-off-white text-center mt-2">Ginni Panwar</h3>
-              <p className="font-body text-[8px] tracking-[3px] text-gold text-center uppercase mt-1 mb-6">Co-Founder & Creative Director</p>
+            {/* Corner Decorative Brackets */}
+            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold z-20" />
+            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold z-20" />
+            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-gold z-20" />
+            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-gold z-20" />
+
+            <div className="flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-14">
               
-              <div className="w-[50px] h-[1px] bg-gold opacity-30 mx-auto mb-6" />
-              
-              <p className="font-body text-[12px] text-off-white-dim leading-[2.2] mb-8 text-center md:text-left">
-                Ginni is the creative soul of Vistaar Studios. With a deep passion for fashion, performance, and the art of presentation, she brings the vision and aesthetic direction that makes every Vistaar event feel like a world class production. Her understanding of what performers need — dignity, professionalism, and a real stage — is the foundation on which Vistaar&apos;s event philosophy is built. Ginni leads the creative direction of all events, the studio partnership program, and the talent community that Vistaar Studios is building across Delhi NCR.
-              </p>
+              {/* Photo Column */}
+              <div className="relative w-[220px] md:w-[280px] shrink-0 flex flex-col items-center">
+                <div className="relative w-full aspect-[4/5] overflow-hidden border border-[rgba(201,168,76,0.3)] shadow-[0_10px_30px_rgba(0,0,0,0.6)] group">
+                  <Image 
+                    src="/vivek-panwar.jpg" 
+                    alt="Vivek Panwar" 
+                    fill 
+                    className="object-cover object-center filter grayscale contrast-[1.08] hover:grayscale-0 transition-all duration-700"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                  
+                  {/* Subtle inner corner accents */}
+                  <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-gold/70" />
+                  <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-gold/70" />
+                </div>
 
-              <div className="border-l-[2px] border-gold pl-5 mt-auto bg-transparent/50 p-4">
-                <p className="font-display italic text-[18px] text-off-white mb-3 leading-snug">
-                  &quot;I have seen too many talented people perform in spaces that did not honour their gift. Vistaar Studios exists to change that — one stage at a time.&quot;
-                </p>
-                <p className="font-body text-[9px] tracking-[2px] text-gold uppercase">
-                  — Ginni Panwar, Co-Founder
-                </p>
+                <div className="mt-4 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+                  <span className="font-body text-[9px] uppercase tracking-[3px] text-gold/80">
+                    Founder & Managing Director
+                  </span>
+                </div>
               </div>
-            </motion.div>
 
-            {/* Vansh */}
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, x: 30 },
-                visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
-              }}
-              className="bg-[#111] border border-[rgba(201,168,76,0.1)] p-10 md:p-12 flex flex-col"
-            >
-              <div className="w-[140px] h-[140px] rounded-full border border-gold mx-auto bg-[#1a1a1a] flex items-center justify-center mb-6">
-                <span className="font-display text-[32px] text-gold">VP</span>
+              {/* Bio & Details Column */}
+              <div className="flex flex-col justify-between flex-1 text-center md:text-left">
+                <div>
+                  <span className="font-body text-[9px] tracking-[4px] text-gold uppercase block mb-2">
+                    Leadership & Vision
+                  </span>
+                  <h3 className="font-display font-[300] text-4xl md:text-5xl text-off-white tracking-wide">
+                    Vivek Panwar
+                  </h3>
+                  
+                  <div className="w-16 h-[1px] bg-gradient-to-r from-gold to-transparent my-6 mx-auto md:mx-0" />
+                  
+                  <p className="font-body text-[12px] text-off-white-dim leading-[2.3] mb-6">
+                    Vivek Panwar is the visionary founder driving Mavi Entertainment Production House. With a steadfast dedication to elevating artistic standards and creating genuine production value, he laid the foundation for an ecosystem where emerging models, dancers, and creative artists are given the professional platform their craft deserves.
+                  </p>
+                  
+                  <p className="font-body text-[12px] text-off-white-dim leading-[2.3] mb-8">
+                    Under his leadership, Mavi Entertainment Production House is forging groundbreaking studio partnerships, elite runway productions, and an expansive nationwide talent marketplace that redefines talent discovery across India.
+                  </p>
+                </div>
+
+                {/* Quote Box */}
+                <div className="border-l-[2px] border-gold pl-5 bg-white/[0.02] p-4 border border-white/[0.05] relative">
+                  <p className="font-display italic text-[17px] text-off-white mb-2 leading-relaxed">
+                    &quot;Every performer carries extraordinary potential. Our responsibility is to build the spotlight that honors that gift.&quot;
+                  </p>
+                  <p className="font-body text-[9px] tracking-[2px] text-gold uppercase">
+                    — Vivek Panwar
+                  </p>
+                </div>
+
               </div>
-              <h3 className="font-display font-[300] text-[36px] text-off-white text-center mt-2">Vansh Panwar</h3>
-              <p className="font-body text-[8px] tracking-[3px] text-gold text-center uppercase mt-1 mb-6">Co-Founder & Business Director</p>
-              
-              <div className="w-[50px] h-[1px] bg-gold opacity-30 mx-auto mb-6" />
-              
-              <p className="font-body text-[12px] text-off-white-dim leading-[2.2] mb-8 text-center md:text-left">
-                Vansh is the strategic force behind Vistaar Studios. With a sharp eye for business models, growth strategy, and market opportunity, he is the architect of Vistaar&apos;s expansion vision — from a Delhi NCR events company to a national talent ecosystem. His thinking drives the marketplace, the sponsor relationships, the studio partner network, and the long-term roadmap that makes Vistaar more than just an events brand. Vansh leads business development, sponsor acquisitions, marketplace growth, and the operational engine that powers every Vistaar event.
-              </p>
 
-              <div className="border-l-[2px] border-gold pl-5 mt-auto bg-transparent/50 p-4">
-                <p className="font-display italic text-[18px] text-off-white mb-3 leading-snug">
-                  &quot;Delhi NCR has world class talent hiding in plain sight. We are just building the spotlight.&quot;
-                </p>
-                <p className="font-body text-[9px] tracking-[2px] text-gold uppercase">
-                  — Vansh Panwar, Co-Founder
-                </p>
-              </div>
-            </motion.div>
-
-          </div>
-
-          <motion.p variants={itemVariants} className="font-body text-[13px] text-off-white-dim max-w-[700px] text-center leading-[2]">
-            Ginni and Vansh bring together the two things every great entertainment company needs — creative vision and business strategy. One builds the dream. The other builds the machine that makes the dream possible. Together they are building Vistaar Studios into the platform that Indian talent has always deserved.
-          </motion.p>
+            </div>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -442,13 +454,13 @@ export default function About() {
             &quot;
           </motion.span>
           <motion.h3 variants={itemVariants} className="font-display italic text-3xl md:text-[42px] text-off-white font-[300] leading-[1.4] mb-12">
-            We started with a simple but powerful belief — talent in India is not scarce. Opportunity is. Vistaar Studios is our answer to that.
+            We started with a simple but powerful belief — talent in India is not scarce. Opportunity is. Mavi Entertainment Production House is our answer to that.
           </motion.h3>
 
           <motion.div variants={itemVariants} className="flex flex-col items-center">
             <div className="w-[60px] h-[1px] bg-gold mb-6 opacity-30" />
-            <span className="font-body text-[10px] text-gold tracking-[4px] uppercase mb-2">Ginni Panwar & Vansh Panwar</span>
-            <span className="font-body text-[9px] text-off-white-dim tracking-[2px] uppercase">Founders, Vistaar Studios</span>
+            <span className="font-body text-[10px] text-gold tracking-[4px] uppercase mb-2">Vivek Panwar</span>
+            <span className="font-body text-[9px] text-off-white-dim tracking-[2px] uppercase">Founder, Mavi Entertainment Production House</span>
           </motion.div>
         </motion.div>
       </section>

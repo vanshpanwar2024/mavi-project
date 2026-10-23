@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "Terms of Use | Vistaar Studios",
-  description: "Terms of Use for Vistaar Studios - Rules and regulations for using our services.",
+  title: "Terms of Use | Mavi Entertainment Production House",
+  description: "Terms of Use for Mavi Entertainment Production House - Rules and regulations for using our services.",
 };
 
 export default function TermsOfUse() {
@@ -18,7 +18,7 @@ export default function TermsOfUse() {
       <div className="max-w-4xl mx-auto">
         <h1 className="font-display text-4xl md:text-5xl text-gold mb-4">Terms of Use</h1>
         <p className="font-body text-off-white-dim mb-12">
-          <strong>Vistaar Studios</strong><br />
+          <strong>Mavi Entertainment Production House</strong><br />
           
         </p>
 
@@ -27,7 +27,7 @@ export default function TermsOfUse() {
           <section>
             <h2 className="font-display text-2xl md:text-3xl text-gold-light mb-4">1. Acceptance of Terms</h2>
             <p className="mb-4">
-              By accessing, browsing, or using the services of Vistaar Studios , including our website, event registrations, and marketplace services, you agree to comply with and be bound by these Terms of Use.
+              By accessing, browsing, or using the services of Mavi Entertainment Production House , including our website, event registrations, and marketplace services, you agree to comply with and be bound by these Terms of Use.
             </p>
             <p>
               If you do not agree, you must not use our services.
@@ -47,7 +47,7 @@ export default function TermsOfUse() {
           {/* Section 3 */}
           <section>
             <h2 className="font-display text-2xl md:text-3xl text-gold-light mb-4">3. Services Overview</h2>
-            <p className="mb-4">Vistaar Studios provides:</p>
+            <p className="mb-4">Mavi Entertainment Production House provides:</p>
             <ul className="list-disc list-inside space-y-2 ml-2 mb-4 text-off-white-dim">
               <li>Talent competitions and events</li>
               <li>Registration and participation systems</li>
@@ -76,7 +76,7 @@ export default function TermsOfUse() {
                 <h3 className="font-display text-xl text-gold mb-2">B. Selection Process</h3>
                 <ul className="list-disc list-inside space-y-1 ml-2 text-off-white-dim">
                   <li>Not all participants may be selected for final rounds.</li>
-                  <li>Selection decisions are final and at the sole discretion of Vistaar Studios and judges.</li>
+                  <li>Selection decisions are final and at the sole discretion of Mavi Entertainment Production House and judges.</li>
                 </ul>
               </div>
 
@@ -109,7 +109,7 @@ export default function TermsOfUse() {
                 <h3 className="font-display text-xl text-gold mb-3">B. Payments</h3>
                 <ul className="list-disc list-inside space-y-1 text-off-white-dim text-sm">
                   <li>Payments are processed via third-party gateways (e.g., Razorpay).</li>
-                  <li>Vistaar Studios does not store payment credentials.</li>
+                  <li>Mavi Entertainment Production House does not store payment credentials.</li>
                 </ul>
               </div>
               
@@ -117,7 +117,7 @@ export default function TermsOfUse() {
                 <h3 className="font-display text-xl text-gold mb-3">C. Refund Policy</h3>
                 <p className="mb-2 text-sm">Registration fees are <strong>non-refundable</strong>, except in cases where:</p>
                 <ul className="list-disc list-inside space-y-1 text-off-white-dim text-sm pl-4">
-                  <li>The event is canceled by Vistaar Studios</li>
+                  <li>The event is canceled by Mavi Entertainment Production House</li>
                   <li>Payment errors (duplicate transactions)</li>
                 </ul>
               </div>
@@ -137,12 +137,12 @@ export default function TermsOfUse() {
                 <li>Website design</li>
                 <li>Event formats</li>
               </ul>
-              <p className="text-sm text-off-white-dim">is owned by Vistaar Studios and protected under applicable laws.</p>
+              <p className="text-sm text-off-white-dim">is owned by Mavi Entertainment Production House and protected under applicable laws.</p>
             </div>
 
             <div>
               <h3 className="font-display text-xl text-gold mb-2">B. User Content</h3>
-              <p className="mb-2">By participating, you grant Vistaar Studios a <strong>non-exclusive, royalty-free, worldwide license</strong> to:</p>
+              <p className="mb-2">By participating, you grant Mavi Entertainment Production House a <strong>non-exclusive, royalty-free, worldwide license</strong> to:</p>
               <ul className="list-disc list-inside space-y-1 ml-2 text-off-white-dim">
                 <li>Use your photos, videos, and performance recordings</li>
                 <li>Publish content for marketing, promotions, and social media</li>
@@ -171,7 +171,7 @@ export default function TermsOfUse() {
               <li>Studios</li>
               <li>Casting agencies</li>
             </ul>
-            <p className="mb-2">Vistaar Studios:</p>
+            <p className="mb-2">Mavi Entertainment Production House:</p>
             <ul className="list-disc list-inside space-y-1 ml-2 text-off-white-dim">
               <li>Acts as a facilitator</li>
               <li>Is not responsible for the quality, outcomes, or disputes between users and third parties</li>
@@ -181,7 +181,7 @@ export default function TermsOfUse() {
           {/* Section 9 */}
           <section>
             <h2 className="font-display text-2xl md:text-3xl text-gold-light mb-4">9. Limitation of Liability</h2>
-            <p className="mb-4">To the maximum extent permitted by law, Vistaar Studios shall not be liable for:</p>
+            <p className="mb-4">To the maximum extent permitted by law, Mavi Entertainment Production House shall not be liable for:</p>
             <ul className="list-disc list-inside space-y-2 ml-2 text-off-white-dim">
               <li>Any indirect, incidental, or consequential damages</li>
               <li>Loss of opportunities, income, or reputation</li>
@@ -234,7 +234,7 @@ export default function TermsOfUse() {
             </p>
             
             <div className="space-y-3">
-              <p className="font-display text-xl">Vistaar Studios</p>
+              <p className="font-display text-xl">Mavi Entertainment Production House</p>
               <div className="flex items-center gap-3 text-off-white/80">
                 <span className="text-xl">📩</span>
                 <a href="mailto:hello@vistaarstudios.in" className="hover:text-gold transition-colors">hello@vistaarstudios.in</a>

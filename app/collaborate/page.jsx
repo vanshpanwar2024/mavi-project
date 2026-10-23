@@ -135,7 +135,7 @@ export default function JoinUs() {
       {/* Background Text */}
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
         <h1 className="font-display text-[15vw] text-white opacity-10 tracking-widest whitespace-nowrap select-none">
-          VISTAAR
+          MAVI
         </h1>
       </div>
 
@@ -151,7 +151,7 @@ export default function JoinUs() {
           <motion.div variants={itemVariants} className="flex items-center justify-center gap-4 mb-6">
             <div className="w-12 h-[1px] bg-gold opacity-50" />
             <span className="font-body text-[10px] tracking-[4px] text-gold uppercase">
-              BE PART OF VISTAAR
+              BE PART OF MAVI
             </span>
             <div className="w-12 h-[1px] bg-gold opacity-50" />
           </motion.div>
@@ -166,7 +166,7 @@ export default function JoinUs() {
 
           {/* Description */}
           <motion.p variants={itemVariants} className="font-body text-[12px] text-off-white-dim leading-loose max-w-[600px] mx-auto mt-6">
-            Vistaar Studios is more than an events company — it is a growing ecosystem of talent, creativity, and ambition. Whether you are a studio, a model, a photographer, an artist, a makeup artist, or a brand — there is a place for you here.
+            Mavi Entertainment Production House is more than an events company — it is a growing ecosystem of talent, creativity, and ambition. Whether you are a studio, a model, a photographer, an artist, a makeup artist, or a brand — there is a place for you here.
           </motion.p>
         </motion.div>
 
@@ -198,20 +198,20 @@ export default function JoinUs() {
               WHO WE ARE LOOKING FOR
             </span>
             <h2 className="font-display text-[40px] md:text-[56px] text-off-white font-[300] leading-tight mb-6">
-              Six Ways to Join Vistaar.
+              Six Ways to Join Mavi.
             </h2>
             <p className="font-body text-[12px] text-off-white-dim leading-loose max-w-[500px] mx-auto">
-              Every role in the Vistaar ecosystem is built on real value exchange. You bring your talent and expertise. We bring the platform, the audience, and the opportunity.
+              Every role in the Mavi ecosystem is built on real value exchange. You bring your talent and expertise. We bring the platform, the audience, and the opportunity.
             </p>
           </motion.div>
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px] max-w-[1200px] mx-auto">
             {[
-              { num: '01', image: '/join-1.png', title: 'Studio Partners', desc: "Partner with Vistaar and earn revenue share while giving your students Delhi NCR's most prestigious stage.", target: 'studio-partners' },
+              { num: '01', image: '/join-1.png', title: 'Studio Partners', desc: "Partner with Mavi and earn revenue share while giving your students Delhi NCR's most prestigious stage.", target: 'studio-partners' },
               { num: '02', image: '/join-2.png', title: 'Models', desc: "Walk our runways, build your portfolio, and get discovered by brands and agencies actively looking for fresh faces.", target: 'models' },
-              { num: '03', image: '/join-3.png', title: 'Photographers & Videographers', desc: "Shoot our events, join our marketplace, and build your client base through Vistaar's growing talent community.", target: 'photographers' },
-              { num: '04', image: '/join-4.png', title: 'Artists & Performers', desc: "Perform at Vistaar events as showcase artists, opening acts, or brand activation performers on a real professional stage.", target: 'artists' },
+              { num: '03', image: '/join-3.png', title: 'Photographers & Videographers', desc: "Shoot our events, join our marketplace, and build your client base through Mavi's growing talent community.", target: 'photographers' },
+              { num: '04', image: '/join-4.png', title: 'Artists & Performers', desc: "Perform at Mavi events as showcase artists, opening acts, or brand activation performers on a real professional stage.", target: 'artists' },
               { num: '05', image: '/join-5.png', title: 'Makeup Artists', desc: "Be our official glam team. Get credited on all event content and build your clientele through our performer community.", target: 'makeup-artists' },
               { num: '06', image: '/join-6.png', title: 'Sponsors & Brands', desc: "Reach Delhi NCR's most passionate youth audience through event sponsorship, on ground activation, and digital campaigns.", target: 'sponsors' }
             ].map((card, idx) => (
@@ -252,7 +252,7 @@ export default function JoinUs() {
         </motion.div>
       </section>
 
-      {/* SECTION 4 — WHY VISTAAR */}
+      {/* SECTION 4 — WHY MAVI */}
       <section className="bg-transparent py-[120px] px-[24px] md:px-[60px] relative z-10">
         <motion.div 
           className="max-w-7xl mx-auto"
@@ -264,7 +264,7 @@ export default function JoinUs() {
           {/* Header */}
           <motion.div variants={itemVariants} className="text-center mb-24">
             <span className="font-body text-[10px] tracking-[4px] text-gold uppercase block mb-4">
-              WHY VISTAAR
+              WHY MAVI
             </span>
             <h2 className="font-display text-[40px] md:text-[56px] text-off-white font-[300] leading-tight max-w-[700px] mx-auto">
               Real Value. Real Opportunity. Real Growth.
@@ -279,7 +279,7 @@ export default function JoinUs() {
               <div className="text-gold text-[20px] opacity-80 mb-[24px]">◆</div>
               <h3 className="font-display text-[28px] text-off-white">Ground Floor Opportunity</h3>
               <p className="font-body text-[11px] text-off-white-dim leading-[2] mt-[16px]">
-                Vistaar Studios is at the beginning of something national. Joining us now means growing with a platform that is building toward every major city in India. The relationships and credibility you build here compound over time.
+                Mavi Entertainment Production House is at the beginning of something national. Joining us now means growing with a platform that is building toward every major city in India. The relationships and credibility you build here compound over time.
               </p>
             </motion.div>
 
@@ -288,7 +288,7 @@ export default function JoinUs() {
               <div className="text-gold text-[20px] opacity-80 mb-[24px]">◆</div>
               <h3 className="font-display text-[28px] text-off-white">Real Value Exchange</h3>
               <p className="font-body text-[11px] text-off-white-dim leading-[2] mt-[16px]">
-                We do not offer exposure as payment. Every partner, artist, and collaborator in the Vistaar ecosystem gets real tangible value — revenue share, credits, marketplace listings, audience access, and industry connections that actually open doors.
+                We do not offer exposure as payment. Every partner, artist, and collaborator in the Mavi ecosystem gets real tangible value — revenue share, credits, marketplace listings, audience access, and industry connections that actually open doors.
               </p>
             </motion.div>
 
@@ -297,7 +297,7 @@ export default function JoinUs() {
               <div className="text-gold text-[20px] opacity-80 mb-[24px]">◆</div>
               <h3 className="font-display text-[28px] text-off-white">A Community That Grows</h3>
               <p className="font-body text-[11px] text-off-white-dim leading-[2] mt-[16px]">
-                When you join Vistaar Studios you join a network of studios, performers, creators, and brands all moving in the same direction. The connections you make here — between events, through the marketplace, across the community — are the real long term value.
+                When you join Mavi Entertainment Production House you join a network of studios, performers, creators, and brands all moving in the same direction. The connections you make here — between events, through the marketplace, across the community — are the real long term value.
               </p>
             </motion.div>
 
