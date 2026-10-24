@@ -9,6 +9,8 @@ export default function AdminDashboard() {
   const router = useRouter();
   const [stats, setStats] = useState({ total: 0, upcoming: 0, registrations: 0, todayApps: 0 });
   const [events, setEvents] = useState([]);
+  const [dbError, setDbError] = useState(null);
+  const [showSqlGuide, setShowSqlGuide] = useState(false);
   
   // Form State
   const [formData, setFormData] = useState({
@@ -17,7 +19,7 @@ export default function AdminDashboard() {
     category: "Fashion Event",
     location: "",
     event_date: "",
-    is_month_only: false, // Added state for month-only toggle
+    is_month_only: false,
     registration_deadline: "",
     preliminary_fee: "",
     finale_fee: "",
@@ -43,19 +45,34 @@ export default function AdminDashboard() {
   }, [router]);
 
   const fetchDashboardData = async () => {
-    // Fetch events
-    const { data: eventsData } = await supabase
-      .from('events')
-      .select('*')
-      .order('event_date', { ascending: false });
-      
-    if (eventsData) {
-      setEvents(eventsData);
-      setStats(prev => ({
-        ...prev,
-        total: eventsData.length,
-        upcoming: eventsData.filter(e => e.status === 'Upcoming').length
-      }));
+    try {
+      const { data: eventsData, error } = await supabase
+        .from('events')
+        .select('*')
+        .order('event_date', { ascending: false });
+        
+      if (error) {
+        console.error("Error fetching events:", error);
+        if (error.code === 'PGRST205' || error.message?.toLowerCase().includes("could not find the table") || error.message?.toLowerCase().includes("does not exist")) {
+          setDbError("Database table 'events' has not been created yet in your Supabase project.");
+        } else {
+          setDbError(error.message);
+        }
+        return;
+      }
+
+      setDbError(null);
+      if (eventsData) {
+        setEvents(eventsData);
+        setStats(prev => ({
+          ...prev,
+          total: eventsData.length,
+          upcoming: eventsData.filter(e => e.status === 'Upcoming').length
+        }));
+      }
+    } catch (err) {
+      console.error("Fetch dashboard error:", err);
+      setDbError(err.message);
     }
   };
 
@@ -65,29 +82,37 @@ export default function AdminDashboard() {
   };
 
   const handleImageUpload = async (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files?.[0];
     if (!file) return;
 
     setIsUploading(true);
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${Math.random()}.${fileExt}`;
-    const filePath = `${fileName}`;
+    setFormStatus({ type: "", message: "" });
+    const fileExt = file.name.split('.').pop() || 'jpg';
+    const cleanName = file.name.replace(/[^a-zA-Z0-9]/g, '_').slice(0, 16);
+    const filePath = `${Date.now()}_${cleanName}.${fileExt}`;
 
     try {
       const { error: uploadError } = await supabase.storage
         .from('event-images')
-        .upload(filePath, file);
+        .upload(filePath, file, { cacheControl: '3600', upsert: true });
 
-      if (uploadError) throw uploadError;
+      if (uploadError) {
+        console.error("Storage upload error:", uploadError);
+        if (uploadError.message?.toLowerCase().includes('bucket not found') || uploadError.statusCode === '404') {
+          throw new Error("Storage bucket 'event-images' does not exist in Supabase yet. Please run the setup script in Supabase, or paste an image URL directly into the field below.");
+        }
+        throw uploadError;
+      }
 
       const { data } = supabase.storage
         .from('event-images')
         .getPublicUrl(filePath);
 
-      setFormData({ ...formData, image_url: data.publicUrl });
+      setFormData(prev => ({ ...prev, image_url: data.publicUrl }));
+      setFormStatus({ type: "success", message: "Cover image uploaded successfully!" });
     } catch (error) {
       console.error('Error uploading image:', error);
-      setFormStatus({ type: "error", message: "Failed to upload image." });
+      setFormStatus({ type: "error", message: error.message || "Failed to upload image." });
     } finally {
       setIsUploading(false);
     }
@@ -97,17 +122,34 @@ export default function AdminDashboard() {
     e.preventDefault();
     setFormStatus({ type: "", message: "" });
 
+    if (!formData.title?.trim()) {
+      setFormStatus({ type: "error", message: "Event Title is required." });
+      return;
+    }
+    if (!formData.event_date) {
+      setFormStatus({ type: "error", message: "Event Date is required." });
+      return;
+    }
+
     try {
-      // Create a clean object for submission
-      const dataToSubmit = { ...formData };
-      
-      // Remove empty strings for numeric/date fields to avoid type errors in Supabase
-      if (!dataToSubmit.preliminary_fee) delete dataToSubmit.preliminary_fee;
-      if (!dataToSubmit.finale_fee) delete dataToSubmit.finale_fee;
-      if (!dataToSubmit.max_participants) delete dataToSubmit.max_participants;
-      if (!dataToSubmit.registration_deadline) delete dataToSubmit.registration_deadline;
-      
-      console.log("Submitting data:", dataToSubmit); // Debug log
+      // Create a clean, typed object for Supabase
+      const dataToSubmit = {
+        title: formData.title.trim(),
+        description: formData.description?.trim() || "",
+        category: formData.category || "Fashion Event",
+        location: formData.location?.trim() || null,
+        event_date: formData.event_date,
+        is_month_only: Boolean(formData.is_month_only),
+        status: formData.status || "Upcoming",
+        is_featured: Boolean(formData.is_featured),
+        image_url: formData.image_url?.trim() || null,
+        registration_deadline: formData.registration_deadline || null,
+        preliminary_fee: formData.preliminary_fee !== "" && formData.preliminary_fee !== null ? Number(formData.preliminary_fee) : null,
+        finale_fee: formData.finale_fee !== "" && formData.finale_fee !== null ? Number(formData.finale_fee) : null,
+        max_participants: formData.max_participants !== "" && formData.max_participants !== null ? parseInt(formData.max_participants, 10) : null,
+      };
+
+      console.log("Submitting event data:", dataToSubmit);
 
       if (editingId) {
         const { error } = await supabase
@@ -121,7 +163,7 @@ export default function AdminDashboard() {
           .from('events')
           .insert([dataToSubmit]);
         if (error) throw error;
-        setFormStatus({ type: "success", message: "Event published successfully. It is now live on the Events page." });
+        setFormStatus({ type: "success", message: "Event published successfully! It is now live on the Events page." });
       }
       
       // Reset form
@@ -133,10 +175,18 @@ export default function AdminDashboard() {
       setEditingId(null);
       fetchDashboardData();
       
-      setTimeout(() => setFormStatus({ type: "", message: "" }), 5000);
+      setTimeout(() => setFormStatus({ type: "", message: "" }), 6000);
     } catch (error) {
       console.error("Error saving event:", error);
-      setFormStatus({ type: "error", message: `Failed to save event: ${error.message}` });
+      if (error.code === 'PGRST205' || error.message?.toLowerCase().includes("could not find the table") || error.message?.toLowerCase().includes("does not exist")) {
+        setFormStatus({ 
+          type: "error", 
+          message: "Database table 'events' does not exist in Supabase yet. Please run the SQL in supabase_setup.sql in your Supabase SQL Editor (see guide banner above)." 
+        });
+        setDbError("Database table 'events' has not been created yet in your Supabase project.");
+      } else {
+        setFormStatus({ type: "error", message: `Failed to save event: ${error.message || JSON.stringify(error)}` });
+      }
     }
   };
 
@@ -209,6 +259,73 @@ export default function AdminDashboard() {
             </div>
           ))}
         </div>
+
+        {/* Setup / DB Warning Banner */}
+        {dbError && (
+          <div className="relative bg-[#1c1408] border border-gold/40 p-6 mb-8 text-off-white">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-gold text-lg">⚠️</span>
+                  <h3 className="font-display text-lg text-gold tracking-wide">Supabase Database Setup Required</h3>
+                </div>
+                <p className="font-body text-xs text-off-white/80 leading-relaxed max-w-2xl">
+                  {dbError} You need to run the database setup script in your Supabase SQL Editor to create the <code className="text-gold bg-black/40 px-1 py-0.5 rounded">events</code> table and <code className="text-gold bg-black/40 px-1 py-0.5 rounded">event-images</code> storage bucket.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowSqlGuide(!showSqlGuide)}
+                className="bg-gold text-black px-4 py-2 font-body text-[10px] tracking-wider uppercase hover:bg-off-white transition-all whitespace-nowrap self-start md:self-center"
+              >
+                {showSqlGuide ? "Hide Setup Script" : "View Setup SQL"}
+              </button>
+            </div>
+
+            {showSqlGuide && (
+              <div className="mt-4 pt-4 border-t border-gold/20">
+                <p className="font-body text-[11px] text-off-white-dim mb-3">
+                  Open your <a href="https://supabase.com/dashboard/project/jgppzmnzknikwyahuqig/sql" target="_blank" rel="noopener noreferrer" className="text-gold underline hover:text-white">Supabase SQL Editor</a>, paste the SQL below, and click <strong>Run</strong>:
+                </p>
+                <div className="relative">
+                  <pre className="bg-black/80 border border-gold/20 p-4 font-mono text-[10px] text-off-white-dim max-h-60 overflow-y-auto selection:bg-gold selection:text-black">
+{`-- 1. Create events table
+CREATE TABLE IF NOT EXISTS public.events (
+    id BIGSERIAL PRIMARY KEY,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    category TEXT DEFAULT 'Fashion Event',
+    location TEXT,
+    event_date DATE NOT NULL,
+    is_month_only BOOLEAN DEFAULT FALSE,
+    registration_deadline DATE,
+    preliminary_fee NUMERIC,
+    finale_fee NUMERIC,
+    max_participants INTEGER,
+    status TEXT DEFAULT 'Upcoming',
+    is_featured BOOLEAN DEFAULT FALSE,
+    image_url TEXT
+);
+ALTER TABLE public.events ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Allow public read access on events" ON public.events FOR SELECT USING (true);
+CREATE POLICY "Allow all on events" ON public.events FOR ALL USING (true) WITH CHECK (true);
+
+-- 2. Create Public Storage Bucket 'event-images'
+INSERT INTO storage.buckets (id, name, public) VALUES ('event-images', 'event-images', true) ON CONFLICT (id) DO UPDATE SET public = true;
+CREATE POLICY "Allow public view on event-images" ON storage.objects FOR SELECT USING (bucket_id = 'event-images');
+CREATE POLICY "Allow upload on event-images" ON storage.objects FOR INSERT WITH CHECK (bucket_id = 'event-images');
+CREATE POLICY "Allow update on event-images" ON storage.objects FOR UPDATE USING (bucket_id = 'event-images');
+CREATE POLICY "Allow delete on event-images" ON storage.objects FOR DELETE USING (bucket_id = 'event-images');`}
+                  </pre>
+                  <p className="font-body text-[10px] text-gold/80 mt-2">
+                    * The complete script is also saved in your project root at <code className="text-white">supabase_setup.sql</code>
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Form Section */}
         <h2 className="font-display text-[32px] text-off-white mb-[32px]">
@@ -384,23 +501,66 @@ export default function AdminDashboard() {
 
             <div className="md:col-span-2">
               <label className="block font-body text-[10px] text-gold uppercase tracking-wider mb-2">Cover Image</label>
-              <input 
-                type="file" 
-                accept="image/*"
-                onChange={handleImageUpload}
-                className="w-full bg-[#111] border border-[rgba(201,168,76,0.15)] text-off-white p-[10px] font-body text-[12px] file:mr-4 file:py-2 file:px-4 file:rounded-none file:border-0 file:text-[10px] file:font-body file:uppercase file:tracking-wider file:bg-[rgba(201,168,76,0.1)] file:text-gold hover:file:bg-[rgba(201,168,76,0.2)] focus:outline-none"
-              />
-              {isUploading && <p className="text-gold text-[10px] mt-2 font-body">Uploading...</p>}
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Option A: File Upload */}
+                <div className="bg-[#111] border border-[rgba(201,168,76,0.15)] p-4">
+                  <span className="block font-body text-[9px] uppercase tracking-wider text-gold/80 mb-2">
+                    Option 1: Upload from Device
+                  </span>
+                  <input 
+                    type="file" 
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    disabled={isUploading}
+                    className="w-full text-off-white text-[11px] file:mr-3 file:py-2 file:px-3 file:rounded-none file:border-0 file:text-[9px] file:font-body file:uppercase file:tracking-wider file:bg-gold file:text-black hover:file:bg-off-white file:cursor-pointer cursor-pointer focus:outline-none"
+                  />
+                  {isUploading && (
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="w-2 h-2 rounded-full bg-gold animate-ping" />
+                      <p className="text-gold text-[10px] font-body">Uploading to Supabase Storage...</p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Option B: Direct URL Input */}
+                <div className="bg-[#111] border border-[rgba(201,168,76,0.15)] p-4">
+                  <span className="block font-body text-[9px] uppercase tracking-wider text-gold/80 mb-2">
+                    Option 2: Direct Image URL
+                  </span>
+                  <input 
+                    type="url"
+                    placeholder="https://images.unsplash.com/... or storage link"
+                    value={formData.image_url}
+                    onChange={e => setFormData(prev => ({ ...prev, image_url: e.target.value }))}
+                    className="w-full bg-[#0a0a0a] border border-[rgba(201,168,76,0.15)] text-off-white p-[10px_14px] font-body text-[11px] focus:outline-none focus:border-gold transition-all"
+                  />
+                </div>
+              </div>
+
+              {/* Cover Image Preview */}
               {formData.image_url && (
-                <div className="mt-4 border border-[rgba(201,168,76,0.3)] inline-block p-1">
-                  <div className="relative w-[200px] h-[150px]">
+                <div className="mt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-[#111] p-3 border border-gold/30">
+                  <div className="relative w-[160px] h-[100px] border border-gold/40 shrink-0 overflow-hidden">
                     <Image 
                       src={formData.image_url} 
                       alt="Preview" 
                       fill 
-                      sizes="200px"
+                      sizes="160px"
                       className="object-cover" 
+                      unoptimized={formData.image_url.startsWith('http')}
                     />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className="text-[9px] text-gold uppercase tracking-wider block font-body">Active Cover Image:</span>
+                    <p className="font-mono text-[10px] text-off-white-dim truncate">{formData.image_url}</p>
+                    <button
+                      type="button"
+                      onClick={() => setFormData(prev => ({ ...prev, image_url: "" }))}
+                      className="mt-2 text-red-400 hover:text-red-300 font-body text-[9px] uppercase tracking-wider underline cursor-pointer"
+                    >
+                      Remove Cover Image
+                    </button>
                   </div>
                 </div>
               )}
