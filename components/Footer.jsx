@@ -66,10 +66,10 @@ export default function Footer() {
                 Maviproduction92@gmail.com
               </a>
               <a 
-                href="tel:+919217640015" 
+                href="tel:+919211119942" 
                 className="font-display text-[16px] text-off-white hover:text-gold transition-colors duration-300"
               >
-                +91 92176 40015
+                +91 92111 19942
               </a>
               <a 
                 href="https://instagram.com/maviproduction92" 
@@ -101,7 +101,7 @@ export default function Footer() {
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
               </a>
-              <a href="https://wa.me/919217640015" target="_blank" rel="noopener noreferrer" className="text-gold opacity-60 hover:opacity-100 transition-opacity duration-300" aria-label="WhatsApp">
+              <a href="https://wa.me/919211119942" target="_blank" rel="noopener noreferrer" className="text-gold opacity-60 hover:opacity-100 transition-opacity duration-300" aria-label="WhatsApp">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]">
                   <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                 </svg>

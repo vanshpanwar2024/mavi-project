@@ -241,7 +241,7 @@ export default function TermsOfUse() {
               </div>
               <div className="flex items-center gap-3 text-off-white/80">
                 <span className="text-xl">📞</span>
-                <a href="tel:+919217640015" className="hover:text-gold transition-colors">+91 92176 40015</a>
+                <a href="tel:+919211119942" className="hover:text-gold transition-colors">+91 9211119942</a>
               </div>
               <div className="flex items-center gap-3 text-off-white/80">
                 <span className="text-xl">🌐</span>
