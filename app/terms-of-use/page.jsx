@@ -237,11 +237,11 @@ export default function TermsOfUse() {
               <p className="font-display text-xl">Mavi Entertainment Production House</p>
               <div className="flex items-center gap-3 text-off-white/80">
                 <span className="text-xl">📩</span>
-                <a href="mailto:hello@vistaarstudios.in" className="hover:text-gold transition-colors">hello@vistaarstudios.in</a>
+                <a href="mailto:Maviproduction92@gmail.com" className="hover:text-gold transition-colors">Maviproduction92@gmail.com</a>
               </div>
               <div className="flex items-center gap-3 text-off-white/80">
                 <span className="text-xl">📞</span>
-                <a href="tel:+918800125054" className="hover:text-gold transition-colors">+91 8800125054</a>
+                <a href="tel:+919217640015" className="hover:text-gold transition-colors">+91 92176 40015</a>
               </div>
               <div className="flex items-center gap-3 text-off-white/80">
                 <span className="text-xl">🌐</span>
