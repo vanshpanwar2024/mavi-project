@@ -223,7 +223,7 @@ export default function AdminDashboard() {
     <main className="w-full min-h-screen bg-[#050505] pb-[100px]">
       {/* Top Navbar */}
       <nav className="w-full bg-[#0e0e0e] border-b border-[rgba(201,168,76,0.15)] p-[20px_40px] flex items-center justify-between z-50 fixed top-0">
-        <div className="relative w-28 h-10 mix-blend-screen">
+        <div className="relative w-28 h-10">
           <Image
             src="/logo.png"
             alt="Logo"

@@ -18,7 +18,7 @@ export default function Footer() {
           
           {/* Left Column — Brand */}
           <div className="flex flex-col items-center md:items-start flex-1">
-            <Link href="/" className="flex flex-col items-center md:items-start group mix-blend-screen hover:scale-[1.02] transition-transform duration-300">
+            <Link href="/" className="flex flex-col items-center md:items-start group hover:scale-[1.02] transition-transform duration-300">
               <div className="relative w-48 h-24 md:w-60 md:h-32">
                 <Image 
                   src="/logo.png" 

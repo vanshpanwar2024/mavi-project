@@ -40,7 +40,7 @@ export default function LoadingScreen() {
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="mb-10 relative w-[220px] h-[220px] md:w-[300px] md:h-[300px] mix-blend-screen"
+            className="mb-10 relative w-[220px] h-[220px] md:w-[300px] md:h-[300px]"
           >
              <Image 
                src="/logo.png" 

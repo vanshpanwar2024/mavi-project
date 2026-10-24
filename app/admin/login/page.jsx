@@ -44,7 +44,7 @@ export default function AdminLogin() {
         <div className="absolute bottom-0 right-0 w-[15px] h-[15px] border-b border-r border-gold m-[10px]" />
 
         {/* Logo */}
-        <div className="relative w-44 h-20 mix-blend-screen">
+        <div className="relative w-44 h-20">
           <Image
             src="/logo.png"
             alt="Logo"
