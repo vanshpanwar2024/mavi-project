@@ -359,28 +359,28 @@ export default function About() {
             </p>
           </motion.div>
 
-          {/* Vivek Panwar Feature Card */}
+          {/* Vivek Panwar Feature Card (Horizontal Rectangular Layout) */}
           <motion.div 
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } }
             }}
-            className="w-full max-w-4xl bg-gradient-to-b from-[#121212] to-[#0a0a0a] border border-[rgba(201,168,76,0.2)] p-8 md:p-12 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+            className="w-full max-w-5xl bg-gradient-to-br from-[#131313] via-[#0d0d0d] to-[#080808] border border-[rgba(201,168,76,0.22)] p-6 md:p-8 md:py-7 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
           >
             {/* Ambient Background Glow */}
-            <div className="absolute -top-24 -right-24 w-72 h-72 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
             
             {/* Corner Decorative Brackets */}
-            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold z-20" />
-            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold z-20" />
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-gold z-20" />
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-gold z-20" />
+            <div className="absolute top-0 left-0 w-3.5 h-3.5 border-t-2 border-l-2 border-gold z-20" />
+            <div className="absolute top-0 right-0 w-3.5 h-3.5 border-t-2 border-r-2 border-gold z-20" />
+            <div className="absolute bottom-0 left-0 w-3.5 h-3.5 border-b-2 border-l-2 border-gold z-20" />
+            <div className="absolute bottom-0 right-0 w-3.5 h-3.5 border-b-2 border-r-2 border-gold z-20" />
 
-            <div className="flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-14">
+            <div className="flex flex-col md:flex-row items-center md:items-center gap-6 md:gap-8">
               
-              {/* Photo Column */}
-              <div className="relative w-[220px] md:w-[280px] shrink-0 flex flex-col items-center">
-                <div className="relative w-full aspect-[4/5] overflow-hidden border border-[rgba(201,168,76,0.3)] shadow-[0_10px_30px_rgba(0,0,0,0.6)] group">
+              {/* Photo Column - Compact Rectangular Aspect */}
+              <div className="relative w-[150px] sm:w-[170px] md:w-[185px] shrink-0 flex flex-col items-center">
+                <div className="relative w-full aspect-[4/5] overflow-hidden border border-[rgba(201,168,76,0.3)] shadow-[0_8px_25px_rgba(0,0,0,0.6)] group">
                   <Image 
                     src="/vivek-panwar.jpg" 
                     alt="Vivek Panwar" 
@@ -391,45 +391,48 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                   
                   {/* Subtle inner corner accents */}
-                  <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-gold/70" />
-                  <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-gold/70" />
+                  <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t border-l border-gold/70" />
+                  <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b border-r border-gold/70" />
                 </div>
 
-                <div className="mt-4 flex items-center gap-2">
+                <div className="mt-2.5 flex items-center justify-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                  <span className="font-body text-[9px] uppercase tracking-[3px] text-gold/80">
+                  <span className="font-body text-[8.5px] uppercase tracking-[2px] text-gold/80 text-center">
                     Founder & Managing Director
                   </span>
                 </div>
               </div>
 
               {/* Bio & Details Column */}
-              <div className="flex flex-col justify-between flex-1 text-center md:text-left">
+              <div className="flex flex-col justify-between flex-1 text-center md:text-left min-w-0">
                 <div>
-                  <span className="font-body text-[9px] tracking-[4px] text-gold uppercase block mb-2">
-                    Leadership & Vision
-                  </span>
-                  <h3 className="font-display font-[300] text-4xl md:text-5xl text-off-white tracking-wide">
-                    Vivek Panwar
-                  </h3>
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+                    <div>
+                      <span className="font-body text-[8.5px] tracking-[3px] text-gold uppercase block mb-1">
+                        Leadership & Vision
+                      </span>
+                      <h3 className="font-display font-[300] text-3xl md:text-4xl text-off-white tracking-wide">
+                        Vivek Panwar
+                      </h3>
+                    </div>
+                    <span className="font-body text-[8.5px] tracking-[2px] uppercase text-off-white-dim/60 hidden sm:block">
+                      Mavi Entertainment
+                    </span>
+                  </div>
                   
-                  <div className="w-16 h-[1px] bg-gradient-to-r from-gold to-transparent my-6 mx-auto md:mx-0" />
+                  <div className="w-12 h-[1px] bg-gradient-to-r from-gold to-transparent my-3 mx-auto md:mx-0" />
                   
-                  <p className="font-body text-[12px] text-off-white-dim leading-[2.3] mb-6">
-                    Vivek Panwar is the visionary founder driving Mavi Entertainment Production House. With a steadfast dedication to elevating artistic standards and creating genuine production value, he laid the foundation for an ecosystem where emerging models, dancers, and creative artists are given the professional platform their craft deserves.
-                  </p>
-                  
-                  <p className="font-body text-[12px] text-off-white-dim leading-[2.3] mb-8">
-                    Under his leadership, Mavi Entertainment Production House is forging groundbreaking studio partnerships, elite runway productions, and an expansive nationwide talent marketplace that redefines talent discovery across India.
+                  <p className="font-body text-[11.5px] md:text-[12px] text-off-white-dim leading-[1.8] mb-4">
+                    Vivek Panwar is the visionary founder driving Mavi Entertainment Production House. With a steadfast dedication to elevating artistic standards and creating genuine production value, he laid the foundation for an ecosystem where emerging models, dancers, and creative artists are given the professional platform and nationwide industry exposure their craft deserves.
                   </p>
                 </div>
 
-                {/* Quote Box */}
-                <div className="border-l-[2px] border-gold pl-5 bg-white/[0.02] p-4 border border-white/[0.05] relative">
-                  <p className="font-display italic text-[17px] text-off-white mb-2 leading-relaxed">
+                {/* Quote Box - Compact Horizontal Strip */}
+                <div className="border-l-[2px] border-gold pl-4 py-2.5 px-3 bg-white/[0.02] border-t border-r border-b border-white/[0.04] relative text-left">
+                  <p className="font-display italic text-[13.5px] md:text-[14.5px] text-off-white mb-1 leading-snug">
                     &quot;Every performer carries extraordinary potential. Our responsibility is to build the spotlight that honors that gift.&quot;
                   </p>
-                  <p className="font-body text-[9px] tracking-[2px] text-gold uppercase">
+                  <p className="font-body text-[8.5px] tracking-[2px] text-gold uppercase">
                     — Vivek Panwar
                   </p>
                 </div>

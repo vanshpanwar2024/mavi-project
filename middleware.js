@@ -9,8 +9,8 @@ export async function middleware(request) {
   })
 
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder',
+    process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jgppzmnzknikwyahuqig.supabase.co',
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_gUanVVhA69Es9hTD1rberQ_jVUHU1UV',
     {
       cookies: {
         getAll() {
@@ -31,7 +31,15 @@ export async function middleware(request) {
 
   const { data: { user } } = await supabase.auth.getUser()
 
-  if (!user && request.nextUrl.pathname.startsWith('/admin/dashboard')) {
+  const pathname = request.nextUrl.pathname.toLowerCase()
+
+  if (pathname === '/admin' || pathname === '/admin/') {
+    const url = request.nextUrl.clone()
+    url.pathname = user ? '/admin/dashboard' : '/admin/login'
+    return NextResponse.redirect(url)
+  }
+
+  if (!user && pathname.startsWith('/admin/dashboard')) {
     const url = request.nextUrl.clone()
     url.pathname = '/admin/login'
     return NextResponse.redirect(url)
@@ -41,5 +49,5 @@ export async function middleware(request) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: ['/admin', '/admin/:path*', '/ADMIN', '/ADMIN/:path*'],
 }
