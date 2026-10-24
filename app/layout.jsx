@@ -18,8 +18,15 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Mavi Entertainment Production House",
+  title: "Mavi Entertainment",
   description: "Delhi NCR's premier fashion and talent events platform",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    apple: '/apple-icon.png',
+  },
 };
 
 export default function RootLayout({ children }) {

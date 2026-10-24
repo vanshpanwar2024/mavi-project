@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "Terms of Use | Mavi Entertainment Production House",
-  description: "Terms of Use for Mavi Entertainment Production House - Rules and regulations for using our services.",
+  title: "Terms of Use | Mavi Entertainment",
+  description: "Terms of Use for Mavi Entertainment - Rules and regulations for using our services.",
 };
 
 export default function TermsOfUse() {

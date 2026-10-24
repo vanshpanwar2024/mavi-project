@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "Privacy Policy | Mavi Entertainment Production House",
-  description: "Privacy Policy for Mavi Entertainment Production House - Information on how we collect, use, and protect your data.",
+  title: "Privacy Policy | Mavi Entertainment",
+  description: "Privacy Policy for Mavi Entertainment - Information on how we collect, use, and protect your data.",
 };
 
 export default function PrivacyPolicy() {
