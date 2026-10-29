@@ -176,3 +176,56 @@ DROP POLICY IF EXISTS "Allow delete on event-images" ON storage.objects;
 CREATE POLICY "Allow delete on event-images" 
 ON storage.objects FOR DELETE 
 USING (bucket_id = 'event-images');
+
+
+-- ==========================================
+-- 5. Create 'event_registrations' table (Event-wise registrations)
+-- ==========================================
+CREATE TABLE IF NOT EXISTS public.event_registrations (
+    id BIGSERIAL PRIMARY KEY,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    event_id BIGINT REFERENCES public.events(id) ON DELETE CASCADE,
+    event_title TEXT NOT NULL,
+    full_name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    age INTEGER,
+    date_of_birth DATE,
+    gender TEXT,
+    category TEXT,
+    social_media_profile TEXT,
+    portfolio_link TEXT,
+    professional_bio TEXT,
+    terms_accepted BOOLEAN DEFAULT TRUE NOT NULL,
+    status TEXT DEFAULT 'Pending'
+);
+
+-- Enable RLS
+ALTER TABLE public.event_registrations ENABLE ROW LEVEL SECURITY;
+
+-- Allow public insert (anyone registering for an event)
+DROP POLICY IF EXISTS "Allow public insert on event_registrations" ON public.event_registrations;
+CREATE POLICY "Allow public insert on event_registrations"
+ON public.event_registrations FOR INSERT
+TO public
+WITH CHECK (true);
+
+-- Allow authenticated users full access (for logged-in admin)
+DROP POLICY IF EXISTS "Allow authenticated full access on event_registrations" ON public.event_registrations;
+CREATE POLICY "Allow authenticated full access on event_registrations"
+ON public.event_registrations FOR ALL
+TO authenticated
+USING (true)
+WITH CHECK (true);
+
+-- Allow anon key full access (for client / local admin)
+DROP POLICY IF EXISTS "Allow anon full access on event_registrations" ON public.event_registrations;
+CREATE POLICY "Allow anon full access on event_registrations"
+ON public.event_registrations FOR ALL
+TO anon
+USING (true)
+WITH CHECK (true);
+
+-- Indexes for performance & fast event-wise querying
+CREATE INDEX IF NOT EXISTS idx_event_registrations_event_id ON public.event_registrations(event_id);
+CREATE INDEX IF NOT EXISTS idx_event_registrations_created_at ON public.event_registrations(created_at DESC);
+

@@ -144,8 +144,8 @@ export default function EventsPreview() {
                         </div>
                     </div>
 
-                    <Link href={`/events/${event.id}`} className="inline-block border-b border-gold text-gold font-body text-[9px] uppercase tracking-[2px] pb-1 w-max hover:text-white hover:border-white transition-all duration-300">
-                       View Details
+                    <Link href={`/events/upcoming?register=${event.id}`} className="inline-block border-b border-gold text-gold font-body text-[9px] uppercase tracking-[2px] pb-1 w-max hover:text-white hover:border-white transition-all duration-300">
+                       Register Now →
                     </Link>
                 </div>
 
